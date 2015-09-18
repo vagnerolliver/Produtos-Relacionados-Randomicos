@@ -20,7 +20,7 @@ function makeUniqueRandom() {
   return val;
 
 }
-
+// esse 3, vair depender de quantos produtos devem aparecer na lista;
 for (var i = 0; i < 3; i++) {
     var rand = makeUniqueRandom();
     if (i % numRandoms == 0) {
