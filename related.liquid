@@ -1,0 +1,15 @@
+{% assign product_id = product.id %}
+{% assign count = 0 %}
+
+{% tags product_id:product.id type:"relacionado" %} 
+  {% products tag:tag.name %}
+   {% contentfor list_relacionados %}
+    {% if product.available %}
+      {% unless product.id == product_id %}
+          <li class="hide item_{{ count }}"><a href="{{ product.url }}" title="{{ product.name }}"><img src="{{ product.image_url | resize: '145x145' }}" alt="{{ product.name }}" title="{{ product.name }}"></a></li>
+          {% assign count = count | plus: 1 %}
+      {% endunless %}
+    {% endif %}
+   {% endcontentfor %} 
+  {% endproducts %}
+{% endtags %} 
